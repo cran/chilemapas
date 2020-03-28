@@ -29,8 +29,8 @@ comunas_los_rios <- mapa_comunas %>%
 paleta <- c("#DCA761", "#CFB567", "#BFBC71", "#9EA887", "#819897")
 
 ggplot(comunas_los_rios) + 
-  geom_sf(aes(fill = pob_adulto_mayor)) +
-  geom_sf_label(aes(label = nombre_comuna)) +
+  geom_sf(aes(fill = pob_adulto_mayor, geometry = geometry)) +
+  geom_sf_label(aes(label = nombre_comuna, geometry = geometry)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
@@ -53,8 +53,8 @@ provincias_los_rios <- mapa_comunas %>%
   left_join(poblacion_adulto_mayor_provincias)
 
 ggplot(provincias_los_rios) + 
-  geom_sf(aes(fill = pob_adulto_mayor)) +
-  geom_sf_label(aes(label = nombre_provincia)) +
+  geom_sf(aes(fill = pob_adulto_mayor, geometry = geometry)) +
+  geom_sf_label(aes(label = nombre_provincia, geometry = geometry)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
@@ -77,8 +77,8 @@ region_los_rios <- mapa_comunas %>%
   left_join(poblacion_adulto_mayor_regiones)
 
 ggplot(region_los_rios) + 
-  geom_sf(aes(fill = pob_adulto_mayor)) +
-  geom_sf_label(aes(label = nombre_region)) +
+  geom_sf(aes(fill = pob_adulto_mayor, geometry = geometry)) +
+  geom_sf_label(aes(label = nombre_region, geometry = geometry)) +
   scale_fill_gradientn(colours = rev(paleta), name = "Poblacion\nadulto mayor") +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
@@ -97,9 +97,9 @@ zonas_valdivia <- mapa_zonas %>%
 paleta <- c("#628ca5", "#dca761")
 
 ggplot() + 
-  geom_sf(data = zonas_valdivia, aes(fill = poblacion)) +
+  geom_sf(data = zonas_valdivia, aes(fill = poblacion, geometry = geometry)) +
   geom_sf(data = filter(comunas_los_rios, codigo_comuna == "14101"),
-          colour = "#2A2B75", fill = NA) +
+          aes(geometry = geometry), colour = "#2A2B75", fill = NA) +
   ylim(-39.9, -39.78) +
   xlim(-73.4, -73.17) +
   scale_fill_gradientn(colors = paleta, name = "Población") +
