@@ -4,7 +4,7 @@ author: "Mauricio Vargas S."
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{How to use this package}
+  %\VignetteIndexEntry{Uso basico del paquete chilemapas}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

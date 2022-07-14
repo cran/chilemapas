@@ -10,8 +10,7 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-#' generar_provincias(r14)
+#' generar_provincias()
 #' @export
 generar_provincias <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(st_as_sf(mapa), field = "codigo_provincia") %>%
@@ -33,8 +32,7 @@ generar_provincias <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom sf st_as_sf
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-#' generar_regiones(r14)
+#' generar_regiones()
 #' @export
 generar_regiones <- function(mapa = chilemapas::mapa_comunas) {
   ms_dissolve(st_as_sf(mapa), field = "codigo_region")
@@ -49,8 +47,7 @@ generar_regiones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom sf st_as_sf
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-#' generar_servicios_salud(r14)
+#' generar_servicios_salud()
 #' @export
 generar_servicios_salud <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%

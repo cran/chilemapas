@@ -17,6 +17,5 @@ Este mapa es calculado a partir
 del mapa comunal para no recargar el volumen de datos del paquete.
 }
 \examples{
-r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-generar_servicios_salud(r14)
+generar_servicios_salud()
 }

@@ -10,8 +10,7 @@
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-#' generar_circunscripciones(r14)
+#' generar_circunscripciones()
 #' @export
 generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
@@ -45,8 +44,7 @@ generar_circunscripciones <- function(mapa = chilemapas::mapa_comunas) {
 #' @importFrom rlang sym
 #' @return Un objeto de clase sf y data.frame.
 #' @examples
-#' r14 <- dplyr::filter(chilemapas::mapa_comunas, codigo_region == 14)
-#' generar_distritos(r14)
+#' generar_distritos()
 #' @export
 generar_distritos <- function(mapa = chilemapas::mapa_comunas) {
   mapa %>%
