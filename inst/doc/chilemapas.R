@@ -6,7 +6,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- fig.width=10, warning=FALSE, message=FALSE------------------------------
+## ----fig.width=10, warning=FALSE, message=FALSE-------------------------------
 library(chilemapas)
 library(dplyr)
 library(ggplot2)
@@ -35,7 +35,7 @@ ggplot(comunas_los_rios) +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
 
-## ---- fig.width=10, warning=FALSE---------------------------------------------
+## ----fig.width=10, warning=FALSE----------------------------------------------
 poblacion_adulto_mayor_provincias <- censo_2017_comunas %>% 
   filter(as.integer(edad) >= 14) %>% 
   left_join(codigos_territoriales) %>% 
@@ -59,7 +59,7 @@ ggplot(provincias_los_rios) +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
 
-## ---- fig.width=10, warning=FALSE---------------------------------------------
+## ----fig.width=10, warning=FALSE----------------------------------------------
 poblacion_adulto_mayor_regiones <- censo_2017_comunas %>% 
   filter(as.integer(edad) >= 14) %>% 
   left_join(codigos_territoriales) %>% 
@@ -83,7 +83,7 @@ ggplot(region_los_rios) +
   labs(title = "Poblacion de 65 anios y mas en la Region de los Rios") +
   theme_minimal(base_size = 13)
 
-## ---- fig.width=10, warning=FALSE---------------------------------------------
+## ----fig.width=10, warning=FALSE----------------------------------------------
 zonas_valdivia <- mapa_zonas %>% 
   filter(codigo_comuna == "14101") %>% 
   inner_join(

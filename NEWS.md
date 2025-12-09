@@ -1,3 +1,8 @@
+# chilemapas 0.4.0
+
+* Replaces 'rmapshaper' dependency with 'sf' for simplifying geometries, this is to
+  ease installation on Unix-like systems.
+
 # chilemapas 0.3.0
 
 * Converts ols CRS and makes CRS: EPSG:4674 - SIRGAS 2000 - Geographic explicit
